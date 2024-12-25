@@ -1,0 +1,85 @@
+/* Variables */
+:root {
+	--main-color: #d90429;
+	--text-color: #020120;
+	--bg-color: #f4f4f9;
+	--hover-color: #ef233c;
+	--hover-bg: #8d99ae;
+	--gradient-start: #2b5876;
+	--gradient-end: #4e4376;
+}
+
+/* Reset styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.layout {
+	background: linear-gradient(135deg, #762b2bbd, #fffdfd5c);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.container {
+	display: flex;
+	gap: 30px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+a {
+	text-decoration: none;
+	/* Removes underline */
+}
+
+.box {
+	width: 300px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--bg-color);
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border-radius: 15px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	position: relative;
+}
+
+.box::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	transform: translateX(-100%);
+	transition: transform 0.3s ease;
+}
+
+.box:hover::before {
+	transform: translateX(0);
+}
+
+.admin {
+	background-color: var(--main-color);
+}
+
+.box:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.box h2 {
+	position: relative;
+	z-index: 1;
+}
